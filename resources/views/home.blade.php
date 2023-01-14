@@ -60,6 +60,8 @@ input[type='number']::-webkit-inner-spin-button,
         </span>
     </button>
 </div>
+<div id="menuSection"></div>
+@if ($products->count())
 <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-20 md:mx-0 mx-3">
     @foreach ($products as $product)
     <div class="w-full h-full flex justify-center">
@@ -227,9 +229,16 @@ input[type='number']::-webkit-inner-spin-button,
         </div>
     </div>
     @endforeach
+</div>
+@else
+<div class="w-full h-full flex justify-center mt-20">
+  <div class="w-3/4 bg-white shadow-md rounded p-2 text-center">
+    <p class="text-2xl text-red-500 uppercase">Belum Ada Produk Yang Dijual</p>
   </div>
+</div>
+@endif
   <div class="w-full h-full flex justify-center mt-5 border-t-2 mx-5 overflow-x-hidden">
-    <div class="w-3/4 h-fit bg-gradient-to-br from-blue-500 via-blue-50 to-blue-50 p-2 rounded mt-5 border-2 border-blue-500 shadow-md shadow-slate-400">
+    <div class="w-3/4 h-fit bg-gradient-to-br from-blue-500 via-blue-50 to-blue-50 p-2 rounded mt-5 border-2 border-blue-500 shadow-md shadow-slate-400" id="aboutWarung">
       <div class="img_warung">
         <img src="{{ asset('/img/warung_img.JPG') }}" class="mx-auto object-cover" alt="Warung Bu Putri">
       </div>
