@@ -110,7 +110,8 @@ class DashboardController extends Controller
 
         if ($request->hasFile('product_image')) {
           $filename = $request->file('product_image')->getClientOriginalName();
-          $storeImage = $request->file('product_image')->move(public_path() . "/storage/product_image/", $filename);
+          $storeImage = $request->file('product_image')
+                                ->move(public_path() . "/storage/product_image/", $filename);
           $validation['product_image'] = $filename;
         }
 
